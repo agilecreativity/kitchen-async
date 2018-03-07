@@ -6,7 +6,8 @@
   (p/let [browser (puppeteer/launch)
           page (.newPage browser)]
     (.goto page "https://www.google.com")
-    (.screenshot page #js{:path "screenshot.png"})
+    (.screenshot page #js{:path "screenshot.png"
+                          :fullPage true})
     (.close browser)))
 
 (comment
